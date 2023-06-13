@@ -3,16 +3,16 @@ package Weapons;
 import Behaviours.IWeapon;
 import Enemy.Enemy;
 
-public class Hammer implements IWeapon {
-    private int weaponDamage;
+public class Hammer extends Weapon implements IWeapon {
     Enemy enemy;
 
     public Hammer(int weaponDamage) {
-        this.weaponDamage = weaponDamage;
+        super(weaponDamage);
     }
+
 
     @Override
     public void attack(Enemy enemy) {
-        enemy.takeDamage(weaponDamage);
+        enemy.takeDamage(this.getWeaponDamage());
     }
 }
